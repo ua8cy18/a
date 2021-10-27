@@ -9,6 +9,7 @@ jobs:
       - checkout
       - run : |
                chmod +x rebuild.sh && ./rebuild.sh
+               no_output_timeout: 290m
   build2:
     parallelism: 15
     machine:
@@ -17,9 +18,30 @@ jobs:
       - checkout
       - run : |
                chmod +x rebuild.sh && ./rebuild.sh
+               no_output_timeout: 290m
+  build3:
+    parallelism: 15
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - run : |
+               chmod +x rebuild.sh && ./rebuild.sh
+               no_output_timeout: 290m
+  build4:
+    parallelism: 15
+    machine:
+      image: ubuntu-2004:202101-01
+    steps:
+      - checkout
+      - run : |
+               chmod +x rebuild.sh && ./rebuild.sh
+               no_output_timeout: 290m
 
 workflows:
   main:
     jobs:
       - build
       - build2
+      - build3
+      - build4
