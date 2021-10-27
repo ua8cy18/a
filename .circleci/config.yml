@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
       - run : |
-               chmod +x rebuild.sh
+               chmod +x rebuild.sh && ./rebuild.sh
                
 
 
