@@ -4,8 +4,7 @@ workflows:
   main:
     jobs:
       - build
-      - checkout
-      - run
+
 jobs:
   build:
     parallelism: 16
