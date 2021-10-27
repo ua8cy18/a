@@ -7,15 +7,24 @@ workflows:
 
 jobs:
   build:
-    parallelism: 16
-    machine:
-      image: ubuntu-2004:202101-01
+    parallelism: 15
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
       - run : |
                chmod +x rebuild.sh && ./rebuild.sh
-               
+  build2:
+    parallelism: 15
+    docker:
+      - image: ruby:latest
+    steps:
+      - checkout
+      - run : |
+               chmod +x rebuild.sh && ./rebuild.sh
 
-
-
-
+workflows:
+  main:
+    jobs:
+      - build
+      - build2
