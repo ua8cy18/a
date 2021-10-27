@@ -4,7 +4,7 @@ jobs:
   build:
     parallelism: 15
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu-2004:202101-01
     steps:
       - checkout
       - run : |
@@ -12,7 +12,7 @@ jobs:
   build2:
     parallelism: 15
     machine:
-      image: ubuntu-1604:202007-01
+      image: ubuntu-2004:202101-01
     steps:
       - checkout
       - run : |
