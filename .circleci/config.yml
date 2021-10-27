@@ -1,34 +1,3 @@
-# Build file for CD demo
-#
-# No real need for layer caching, this will be really quick to build
-
-# Some useful repeated stanzas
-
-docker-sign-in: &docker-sign-in
-  name: Sign into Docker registry
-  command: |
-    docker login \
-        -u ${PROJECT_DOCKER_REGISTRY_USER} \
-        -p ${GITLAB_CDDEMO_REGISTRY_TOKEN} \
-        ${PROJECT_DOCKER_REGISTRY}
-
-only-deploy-tags: &only-deploy-tags
-  filters:
-    tags:
-      only: /^deploy-.*/
-    branches:
-      ignore: /.*/
-
-common-env-vars: &common-env-vars
-  PROJECT_DOCKER_REGISTRY: registry.gitlab.com
-  PROJECT_DOCKER_REGISTRY_USER: halfercode
-  PROJECT_DOCKER_IMAGE_URL: registry.gitlab.com/halfercode
-  PROJECT_DOCKER_SERVICE_NAME: cd-demo
-  PROJECT_DEPLOY_HOST: agnes.jondh.me.uk
-  PROJECT_DEPLOY_USER: root
-
-# Here are the jobs
-
 version: 2
 jobs:
   build:
