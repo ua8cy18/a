@@ -3,16 +3,16 @@ version: 2.1
 jobs:
   build:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
       - run : |
                chmod +x rebuild.sh && ./rebuild.sh
   build2:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
       - run : |
