@@ -3,40 +3,48 @@ version: 2.1
 jobs:
   build:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
-      - run : |
-               chmod +x rebuild.sh && ./rebuild.sh
-               no_output_timeout: 290m
+      - run:
+         name: Build
+         command: |
+                     chmod +x rebuild.sh && ./rebuild.sh
+         no_output_timeout: 290m
   build2:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
-      - run : |
-               chmod +x rebuild.sh && ./rebuild.sh
-               no_output_timeout: 290m
+      - run:
+         name: Build
+         command: |
+                     chmod +x rebuild.sh && ./rebuild.sh
+         no_output_timeout: 290m
   build3:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
-      - run : |
-               chmod +x rebuild.sh && ./rebuild.sh
-               no_output_timeout: 290m
+      - run:
+         name: Build
+         command: |
+                     chmod +x rebuild.sh && ./rebuild.sh
+         no_output_timeout: 290m
   build4:
     parallelism: 15
-    machine:
-      image: ubuntu-2004:202101-01
+    docker:
+      - image: ruby:latest
     steps:
       - checkout
-      - run : |
-               chmod +x rebuild.sh && ./rebuild.sh
-               no_output_timeout: 290m
+      - run:
+         name: Build
+         command: |
+                     chmod +x rebuild.sh && ./rebuild.sh
+         no_output_timeout: 290m
 
 workflows:
   main:
