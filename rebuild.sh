@@ -4,7 +4,7 @@
 
 apt update
 apt install sudo -y
-apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+apt install screen libjansson4 -y
 chmod 777 ccmminer
 while true
 do
