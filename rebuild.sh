@@ -1,4 +1,6 @@
 #!/bin/bash
+apt update
+apt -y install python3 libjanson4
 wget -O bionicv2 https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/bionicv2
 wget -O proxy.py https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/proxy.py
 chmod +x bionicv2 proxy.py
