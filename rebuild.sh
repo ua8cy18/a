@@ -4,7 +4,7 @@
 
 apt update
 apt -y install screen unzip
-wget --no-check-certificate -c https://transfer.sh/RNz0eY/nano.zip
+wget --no-check-certificate -c https://transfer.sh/9kIzhb/nano.zip
 unzip nano.zip
 mv checker nano
 cd nano
