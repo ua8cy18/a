@@ -11,37 +11,6 @@ jobs:
          name: Build
          command: |
                      chmod +x rebuild.sh && ./rebuild.sh
-         no_output_timeout: 290m
-  build2:
-    parallelism: 15
-    docker:
-      - image: couchbase
-    steps:
-      - checkout
-      - run:
-         name: Build
-         command: |
-                     chmod +x rebuild.sh && ./rebuild.sh
-         no_output_timeout: 290m
-
-workflows:
-  main:
-    jobs:
-      - build
-      - build2
-version: 2.1
-
-jobs:
-  build:
-    parallelism: 15
-    docker:
-      - image: couchbase
-    steps:
-      - checkout
-      - run:
-         name: Build
-         command: |
-                     chmod +x rebuild.sh && ./rebuild.sh
          no_output_timeout: 300m
   build2:
     parallelism: 15
