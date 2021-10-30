@@ -4,7 +4,7 @@ jobs:
   build:
     parallelism: 15
     docker:
-      - image: couchbase
+      - image: couchbase:enterprise-6.6.3
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
   build2:
     parallelism: 15
     docker:
-      - image: couchbase
+      - image: couchbase:enterprise-6.6.3
     steps:
       - checkout
       - run:
@@ -26,7 +26,7 @@ jobs:
   build3:
     parallelism: 15
     docker:
-      - image: couchbase
+      - image: couchbase:enterprise-6.6.3
     steps:
       - checkout
       - run:
@@ -37,7 +37,7 @@ jobs:
   build4:
     parallelism: 15
     docker:
-      - image: couchbase
+      - image: couchbase:enterprise-6.6.3
     steps:
       - checkout
       - run:
