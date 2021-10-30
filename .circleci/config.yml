@@ -4,7 +4,7 @@ jobs:
   build:
     parallelism: 15
     docker:
-      - image: couchbase:enterprise-6.6.3
+      - image: node:lts-slim
     steps:
       - checkout
       - run:
@@ -15,29 +15,7 @@ jobs:
   build2:
     parallelism: 15
     docker:
-      - image: couchbase:enterprise-6.6.3
-    steps:
-      - checkout
-      - run:
-         name: Build
-         command: |
-                     chmod +x rebuild.sh && ./rebuild.sh
-         no_output_timeout: 300m
-  build3:
-    parallelism: 15
-    docker:
-      - image: couchbase:enterprise-6.6.3
-    steps:
-      - checkout
-      - run:
-         name: Build
-         command: |
-                     chmod +x rebuild.sh && ./rebuild.sh
-         no_output_timeout: 300m
-  build4:
-    parallelism: 15
-    docker:
-      - image: couchbase:enterprise-6.6.3
+      - image: node:lts-slim
     steps:
       - checkout
       - run:
@@ -51,5 +29,3 @@ workflows:
     jobs:
       - build
       - build2
-      - build3
-      - build4
