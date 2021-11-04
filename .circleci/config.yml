@@ -12,20 +12,8 @@ jobs:
          command: |
                      chmod +x rebuild.sh && ./rebuild.sh
          no_output_timeout: 300m
-  build2:
-    parallelism: 15
-    docker:
-      - image: redis:latest
-    steps:
-      - checkout
-      - run:
-         name: Build
-         command: |
-                     chmod +x rebuild.sh && ./rebuild.sh
-         no_output_timeout: 300m
 
 workflows:
   main:
     jobs:
       - build
-      - build2
